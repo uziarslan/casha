@@ -1,0 +1,137 @@
+<%- include('../partials/head') %>
+<title>Student || Dashboard</title>
+<%- include('../partials/headclose') %>
+<section class="dashboardContainer">
+  <nav>
+    <div class="sideNavbarContainer">
+      <div class="logoimgContainer">
+        <img class="logo" src="/images/logo.png" alt="Casha Logo" />
+      </div>
+      <ul class="sideNavbarLinkContainer">
+        <a href="/student/dashboard" class="sideNavbarLinks active">
+          <i class='bx bxs-user'></i>
+          <p>My Teachers</p>
+        </a>
+        <a href="/student/findclass" class="sideNavbarLinks">
+          <i class='bx bxs-user-plus'></i>
+          <p>Find Class</p>
+        </a>
+        <a href="/student/profile" class="sideNavbarLinks">
+          <i class='bx bxs-cog'></i>
+          <p>Profile</p>
+        </a>
+        <a href="/signout" class="sideNavbarLinks">
+          <i class='bx bx-log-out-circle'></i>
+          <p>Sign Out</p>
+        </a>
+      </ul>
+    </div>
+    <div class="bottomTabNavigator">
+      <ul class="bottomTabNavigatorContainer">
+        <li class="bottomNavigatorLinks active2">
+          <a href="/student/dashboard">
+            <i class='bx bxs-user'></i>
+            <p>My Teachers</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/student/findclass">
+            <i class='bx bxs-user-plus'></i>
+            <p>Find Class</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/student/profile">
+            <i class='bx bxs-cog'></i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/signout">
+            <i class='bx bx-log-out-circle'></i>
+            <p>Sign Out</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="dashboard">
+    <div class="dashboardHead">
+      <h2 class="headingText">Dashboard</h2>
+      <div class="userInfo">
+        <% if(user.profileImage) {%>
+        <img src="<%= user.profileImage %>" class="avatar" />
+        <% }else{ %>
+        <img src="/images/avatar-icon-8.jpg" class="avatar" />
+        <% } %>
+        <p class="email"><%= user.username %></p>
+      </div>
+    </div>
+    <div class="dashboardNavbar">
+      <a href="/student/dashboard" class="backButtonSet">
+        <i class='bx bx-left-arrow-alt'></i>
+        <p class="buttonLeftText">My Teachers</p>
+      </a>
+      <div class="screenName">
+        <h2 class="screenNameText">All Teachers</h2>
+      </div>
+      <a href="/student/findclass" class="forwardButtonSet">
+        <p class="buttonRightText">Find Class</p>
+        <i class='bx bx-right-arrow-alt'></i>
+      </a>
+    </div>
+    <div class="searchSection">
+      <form class="searchContainer">
+        <div class="searchInputGroup">
+          <input placeholder="Search a teacher" name="studentName" type="search" class="searchInput" />
+        </div>
+        <div class="itemsPerPageGroup">
+          <select name="results" class="itemsPerPage">
+            <option selected value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+          </select>
+          <p class="itemsPerPageText">Items per page</p>
+        </div>
+      </form>
+    </div>
+    <%- include('../partials/flash') %>
+    <div class="cardsContainerSection">
+      <% if(requests.length) {%>
+      <h4 class="cardSectionHeading">Teachers</h4>
+      <% } else{%>
+      <h4 class="cardSectionHeading">No Teacher found!</h4>
+      <% } %>
+      <div class="cardsWrapper">
+        <% requests.map(({teacher, requests,requestStudent,requestStatus,requestTime, _id, joinUrl}) => { %>
+        <div class="cardBody">
+          <div class="cardImageHead">
+            <img src="<%= teacher.profileImage %>" class="cardImage" />
+          </div>
+          <div class="cardBottom">
+            <p class="name"><%= teacher.firstName %> <%= teacher.lastName %></p>
+            <p class="schoolName"><%= teacher.institute %></p>
+            <p class="degree"><%= teacher.degree %></p>
+            <p class="preferredSubject">Preferred for: <%= teacher.preferredSubject %></p>
+            <% if(requestStatus === 'approved') {%>
+            <p class="availability">Starts At: <%= requestTime %></p>
+            <% }else{ %>
+            <p class="availability">Today: <%= requestTime %></p>
+            <% } %>
+          </div>
+          <div class="cardBottomButtons">
+            <% if(requestStatus === 'approved') {%>
+            <a target="_blank" href="<%= joinUrl %>" class="acceptBtn">Join</a>
+            <a href="/delete/<%= teacher._id %>/<%= requestStudent %>/<%= _id %>" class="deleteButton">Delete</a>
+            <% }else {%>
+            <a href="/delete/<%= teacher._id %>/<%= requestStudent %>/<%= _id %>" class="deleteButton">Delete Request</a>
+            <% } %>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('../partials/bodyclose') %>

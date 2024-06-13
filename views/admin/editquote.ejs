@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+<title>Admin Dashboard</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="quotesContainer">
+  <form class="quoteForm" action="/quote/<%= quote._id %>?_method=PUT" method="post">
+    <label for="author" class="form-label">Author</label>
+    <input value="<%= quote.author %>" required id="author" type="text" class="form-control mb-3" name="author" placeholder="Jhon" />
+    <label for="quote" class="form-label">Quote</label>
+    <textarea required id="quote" type="text" class="form-control textAreaStyles mb-3" name="quote" placeholder="Unleash your creativity and let your words flow. This space is meant for the profound, the thought-provoking, and the enlightening. What message or quote do you have to offer the world? Pour your thoughts into this canvas and let them resonate with others."><%= quote.quote %></textarea>
+    <button type="submit" class="btn btn-success w-100">Save</button>
+  </form>
+  <a href="/admin/quotes" class="mt-3">Cancel</a>
+</div>
+<%- include('../partials/bodyclose') %>

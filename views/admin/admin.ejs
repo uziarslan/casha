@@ -1,0 +1,25 @@
+<%- include('../partials/head') %>
+<title>Admin Dashboard</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="qoutesTextWrapper mt-4">
+  <h1 class="allQoutesText">Admins</h1>
+</div>
+<div class="teacherDisplayContainer">
+  <% if(admins.length) {%>
+  <% admins.forEach((a) => { %>
+  <div class="teacherInnerContainer">
+    <p><%= a.username %></p>
+    <% if (String(user._id) !== String(a._id)) { %>
+    <form action="/admin/delete/<%= a._id %>?_method=DELETE" method="post">
+      <button type="submit" class="btn btn-danger w-100">Delete</button>
+    </form>
+    <% } %>
+  </div>
+  <% }) %>
+  <% }else{ %>
+  <p class="noImageText">No Admin found!</p>
+  <% } %>
+</div>
+<%- include('../partials/bodyclose') %>

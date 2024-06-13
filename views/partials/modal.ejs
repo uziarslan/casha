@@ -1,0 +1,38 @@
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="<%= teacher._id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Topic You need To Learn</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <% if(dayName.toLowerCase() !== 'sunday') {%>
+        <% teacher.availability.map(({day, to, from}) => { %>
+        <% if(dayName === day) {%>
+        <input required type="text" name="topic" placeholder="Topic name" class="form-control mb-3" />
+        <label class="form-label" for="requestTime"><%= day %> timings are <%= to %> to <%= from %></label>
+        <input max="<%= from %>" min="<%= to %>" required type="time" name="requestTime" class="form-control" />
+        <% } %>
+        <% }) %>
+        <% }else{ %>
+        <p>There's no class on Sundays</p>
+        <% } %>
+        <% requests.map(({_id, requests}) => { %>
+        <% if(_id.equals(teacher._id)) {%>
+        <% if(requests.length) {%>
+        <% requests.map(({requestTopic,requestTime}) => { %>
+        <label class="form-label mt-3"><strong>"<%= requestTopic %>" at "<%= requestTime %>"</strong> (Enter same Topic Name and time to learn this topic)</label>
+        <% }) %>
+        <% } %>
+        <% } %>
+        <% }) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Request</button>
+      </div>
+    </div>
+  </div>
+</div>

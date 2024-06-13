@@ -1,0 +1,332 @@
+<%- include('../partials/head1') %>
+<title>SignUp</title>
+<style>
+  .nonedisplay {
+    display: none;
+  }
+
+</style>
+<%- include('../partials/headclose') %>
+<div class="parentDivSignUp">
+  <div class="positionRelative">
+
+    <div class="backgroundAndTextLogin">
+
+
+    </div>
+    <div class="loginIMG"><img src="/images/homepageBackground.jpg" alt=""></div>
+    <div class="textL">
+      <h1 class="loginTextHeading">KNOWLEDGE FROM HOME</h1>
+      <p class="loginTextPara">
+        It is a long established fact that a reader will be
+        distracted by the readable content of a page
+        when looking at its layout.
+      </p>
+    </div>
+
+  </div>
+  <div class="inputContainerLogin">
+    <a href="/" class="inputLoginLogo"></a>
+    <div class="enclosedInput">
+
+
+      <p class="inputTopTextSinUp">Please select your role</p>
+      <div class="roleDiv">
+        <a href="/signup/student" class="student123">
+          <div id="role1" class="selectRole flex123">
+            <img src="/images/Graduate.svg" alt="">
+            <p>Student</p>
+          </div>
+        </a>
+
+        <div id="role2" class="selectRole flex123">
+          <img src="/images/Teacher.jpg" alt="">
+          <p>Teacher</p>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+    <!-- aaaaaaaaaaaaaaaaaaaaaa -->
+    <form method="post" id="teachersInputs" action="/teacher" novalidate class="signupForm">
+      <div class="group specialG">
+        <input required type="text" name="firstName" id="fname" class="inputS noph" placeholder="First Name*">
+
+      </div>
+      <div class="group specialG">
+        <input required type="text" name="lastName" id="lname" class="inputS noph" placeholder="Last Name*">
+
+      </div>
+      <div class="group specialG">
+        <input required type="email" name="username" id="email" class="inputS noph" placeholder="Email address *">
+
+      </div>
+      <div class="group specialG">
+        <input required type="password" name="password" id="password" class="inputS noph" placeholder="Password*">
+
+      </div>
+      <div class="group specialG">
+        <input required type="text" name="degree" id="education" class="inputS noph" placeholder="Higher level of education *">
+
+      </div>
+      <div class="group specialG">
+        <input required type="text" name="institute" id="institute" class="inputS noph" placeholder="Institution/ University*">
+      </div>
+
+      <div class="group specialG">
+        <input type="tel" name="contact" id="tel" class="inputS noph" placeholder="Phone number ">
+      </div>
+      <div class="group specialG">
+        <input required type="text" name="profession" id="Profession" class="inputS noph" placeholder="Profession*">
+      </div>
+      <div class="blankLine OG"></div>
+
+      <div class="group specialG inputSpecial">
+        <input required type="text" name="preferredSubject" id="prefsubject" class="inputS noph " placeholder=" Preferred subject*">
+      </div>
+      <div class="blankLine OG"></div>
+
+      <div class="group specialG inputSpecial">
+        <input required type="text" name="address" id="address" class="inputS noph " placeholder=" Address*">
+      </div>
+      <div class="blankLine OG"></div>
+
+      <div class="group specialG">
+        <input required type="text" name="postalCode" id="postal" class="inputS noph" placeholder=" Postal code *">
+      </div>
+      <div class="group specialG">
+        <input type="text" name="province" id="province" class="inputS noph" placeholder=" Province">
+      </div>
+
+      <div class="group specialG inputSpecial">
+        <label for="upload" class="horiz">
+          <i class='bx bx-paperclip bx-rotate-270' style="color: #FF2970; font-size: 40px;"></i>
+          <p class="policeReport"> Police report* </p>
+          <input required type="file" name="policeReport" id="upload" class="abc">
+        </label>
+      </div>
+      <div class="blankLine"></div>
+
+      <div class="group specialG inputSpecial">
+        <p class="selectDT">Select days and time</p>
+      </div>
+      <div class="blankLine"></div>
+
+      <div class="group specialG inputSpecial intoThis">
+        <div class="horiz thisClass" id="date1">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3">Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="monday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="monday[to]" type="time"> </p>
+            <div class="round" onclick="click1()">
+              <div class="plus"></div>
+              <div class="plus2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="horiz thisClass nonedisplay" id="date2">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3"> Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="tuesday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="tuesday[to]" type="time"> </p>
+            <div class="round" onclick="click2()">
+              <div class="plus"></div>
+              <div class="plus2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="horiz thisClass nonedisplay" id="date3">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3"> Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="wednesday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="wednesday[to]" type="time"> </p>
+            <div class="round" onclick="click3()">
+              <div class="plus"></div>
+              <div class="plus2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="horiz thisClass nonedisplay" id="date4">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3"> Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="thursday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="thursday[to]" type="time"> </p>
+            <div class="round" onclick="click4()">
+              <div class="plus"></div>
+              <div class="plus2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="horiz thisClass nonedisplay" id="date5">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3"> Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="friday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="friday[to]" type="time"> </p>
+            <div class="round" onclick="click5()">
+              <div class="plus"></div>
+              <div class="plus2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="horiz thisClass nonedisplay" id="date6">
+          <div>
+            <select class="dropList">
+              <option value="0">Day</option>
+              <option value="1">Sun</option>
+              <option value="2">Mon</option>
+              <option value="3"> Tue</option>
+              <option value="4">Wed</option>
+              <option value="5">Thu</option>
+              <option value="6">Fri</option>
+              <option value="7">Sat</option>
+            </select>
+          </div>
+          <div class="datecheckI">
+            <p class="TIP">From <input class="time" name="saturday[from]" type="time"> </p>
+            <p class="TIP"> To <input class="time" name="saturday[to]" type="time"> </p>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="blankLine"></div>
+
+      <button class="submitButton signupT" type="submit">Signup</button>
+    </form>
+    <p class="signUpLine" id="signUp">Already have an account? <a href="/login"><span> Sign in</span> </a></p>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the role elements
+    var role1 = document.getElementById('role1');
+    var role2 = document.getElementById('role2');
+
+    // Get the forms
+    var signupForm = document.getElementById('studentInputs');
+    var loginForm = document.getElementById('teachersInputs');
+    var line = document.getElementById('signUp');
+
+    var elementT = document.querySelector('.positionRelative');
+    var elementlol = document.querySelector('.inputContainerLogin');
+
+    // Show the login form
+    loginForm.style.display = 'flex';
+    role2.style.border = '1px solid #FF2970';
+    // Hide the signup form
+    signupForm.style.display = 'none';
+    role1.style.border = '1px solid #CCC';
+
+    // Add click event listeners
+    role1.addEventListener('click', function() {
+      // Show the signup form
+      signupForm.style.display = 'flex';
+      role1.style.border = '1px solid #FF2970';
+      // Hide the login form
+      loginForm.style.display = 'none';
+      role2.style.border = '1px solid #CCC';
+
+    });
+
+    role2.addEventListener('click', function() {
+      // Show the login form
+      loginForm.style.display = 'flex';
+      role2.style.border = '1px solid #FF2970';
+      // Hide the signup form
+      signupForm.style.display = 'none';
+      role1.style.border = '1px solid #CCC';
+
+
+    });
+
+
+  });
+
+  function click1() {
+    let x = document.getElementById("date2");
+    x.style.display = "flex";
+  }
+
+  function click2() {
+    let x = document.getElementById("date3");
+    x.style.display = "flex";
+  }
+
+  function click3() {
+    let x = document.getElementById("date4");
+    x.style.display = "flex";
+  }
+
+  function click4() {
+    let x = document.getElementById("date5");
+    x.style.display = "flex";
+  }
+
+  function click5() {
+    let x = document.getElementById("date6");
+    x.style.display = "flex";
+  }
+
+</script>
+</body>
+
+</html>

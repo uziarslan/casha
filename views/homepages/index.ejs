@@ -1,0 +1,172 @@
+<%- include('../partials/head') %>
+<title>Casha || Homepage</title>
+<link rel="stylesheet" href="/stylesheets/homepagestyle1.css">
+
+<%- include('../partials/headclose') %>
+<nav>
+
+  <img class="logoImg" src="/images/loginLogo.svg" alt="">
+  <div class="blankwidth"></div>
+  <ul class="navMenu">
+    <li class="navitem">
+      <a href="/login">
+        <div class="custom-dropdown12">
+          <p class="paraedit">Login</p>
+        </div>
+      </a>
+    </li>
+    <li class="navitem">
+      <div class="custom-dropdown">
+        <p>Register Yourself</p>
+        <ul class="dropdown-options">
+          <li data-value="/signup/teacher">Register As Teacher</li>
+          <li data-value="/signup/student">Register As Student</li>
+        </ul>
+      </div>
+
+
+      <script>
+        function navigateToRegistration(value) {
+          if (value !== "0") {
+            window.location.href = value;
+          }
+        }
+
+      </script>
+
+    </li>
+  </ul>
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+</nav>
+<div class="verticlePink"> <img class="penClass" src="/images/pencile.png" alt=""></div>
+<div class="inRow responsive">
+  <div class="textDiv">
+
+    <h1 class="textDivHead">Community after school
+      homework assistance</h1>
+    <p class="textDivPara">Helping each child learn in their own unique ways</p>
+    <a href="/login"> <button class="buttonStart"> Get Started</button> </a>
+
+  </div>
+  <img class="lightPinkDiv" src="/images/topRight.png" alt="">
+
+</div>
+<img class="lightPinkDivOut" src="/images/topRight.png" alt="">
+
+
+
+
+<div class="inRow laptopAndText">
+  <div class="laptopPink"></div>
+  <img class="laptopImg" src="/images/laptop.svg" alt="">
+  <div class="LapText">
+    <h2 class="lapTextHeading">Product Spotlight</h2>
+    <p class="lapTextPara">Our new Student Interface enhances remote
+      learning, providing a seamless and personalized
+      experience. Students can customize their
+      dashboard with avatars, while teachers can upload real pictures. Connect with teachers and peers
+      effortlessly on our platform.</p>
+    <a href="/login"> <button class="buttonStart"> Get Started</button> </a>
+    <svg class="circlePink" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <circle cx="24" cy="24" r="22" stroke="#FF2970" stroke-width="4" />
+    </svg>
+  </div>
+
+</div>
+
+<div class="inRow empowerStd">
+  <div class="empText">
+    <h2 class="empTextHeading">Product Spotlight</h2>
+    <p class="empTextPara">Learn how casha can help you
+      achieve your goals</p>
+    <a href="/login"> <button class="buttonStart"> Join classroom</button> </a>
+    <svg class="circlePinkp2" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+      <circle cx="24" cy="24" r="22" stroke="#FF2970" stroke-width="4" />
+    </svg>
+  </div>
+  <img class="empImg" src="/images/thirdDiv.png" alt="">
+
+
+</div>
+
+<div class="provenResults">
+  <div class="provenText">
+    <h2 class="provenResultHeading">Proven Results</h2>
+    <p class="provenResultPara">Our proud partners experience remarkable outcomes</p>
+  </div>
+
+  <div class="resultsImg">
+    <% images.map(({path}) => { %>
+    <img src="<%= path %>" />
+
+    <%}) %>
+  </div>
+</div>
+
+<div class="qoutes">
+  <h2 class="headngQoutes">Inspirational Quotes</h2>
+  <div class="qoutesDivs">
+    <% quotes.map(({quote, author}) => { %>
+    <div class="indvidualQoute">
+      <span class="mark">"</span>
+      <p class="qoutePara"><%= quote %></p>
+      <span class="mark bottomM">"</span>
+    </div>
+    <%}) %>
+  </div>
+</div>
+
+<footer class="fotterLogo">
+
+  <a href="#"><img src="/images/loginLogo.svg" alt=""></a>
+  <div class="fotterLine"></div>
+  <div class="logosFotter"> <i class='bx bxl-facebook-circle'></i>
+    <a href=""><i class='bx bxl-instagram-alt'></i></a>
+    <a href=""><i class='bx bxl-linkedin-square'></i></a>
+    <a href=""><i class='bx bxl-youtube'></i></a>
+  </div>
+  <p class="fotterPar">Copyright © 2023. Casha Inc. All rights reserved.</p>
+
+
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dropdown = document.querySelector(".custom-dropdown");
+    const options = document.querySelectorAll(".dropdown-options li");
+
+    dropdown.addEventListener("click", function() {
+      dropdown.classList.toggle("open");
+    });
+
+    options.forEach((option) => {
+      option.addEventListener("click", function() {
+        const value = option.getAttribute("data-value");
+        if (value !== null && value !== undefined) {
+          window.location.href = value;
+        }
+      });
+    });
+  });
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".navMenu");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+  });
+
+  function navigateToRegistration(value) {
+    if (value !== "0") {
+      window.location.href = value;
+    }
+  }
+
+</script>
+</body>
+
+</html>

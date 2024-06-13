@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+<title>Admin Dashboard</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="quotesContainer">
+  <form class="quoteForm" action="/quote" method="post">
+    <label for="author" class="form-label">Author</label>
+    <input required id="author" type="text" class="form-control mb-3" name="author" placeholder="Jhon" />
+    <label for="quote" class="form-label">Quote</label>
+    <textarea required id="quote" type="text" class="form-control textAreaStyles mb-3" name="quote" placeholder="Unleash your creativity and let your words flow. This space is meant for the profound, the thought-provoking, and the enlightening. What message or quote do you have to offer the world? Pour your thoughts into this canvas and let them resonate with others."></textarea>
+    <button type="submit" class="btn btn-success w-100">Save</button>
+  </form>
+</div>
+<div class="qoutesTextWrapper">
+  <h1 class="allQoutesText mt-5">All Quotes</h1>
+</div>
+<div class="allQuotesWrapper">
+  <% if(quotes.length) {%>
+  <% quotes.map(({quote, author, _id}) => { %>
+  <div class="quoteBody">
+    <p class="quoteText"><%= quote %></p>
+    <p class="quoteBy">- <%= author %></p>
+    <div class="quoteButtonWrappers">
+      <a class="btn btn-warning" href="/admin/quote/edit/<%= _id %>">Edit</a>
+      <form action="/quote/delete/<%= _id %>?_method=DELETE" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+  <% }) %>
+  <% }else{ %>
+  <p class="noImageText">No Quotes found!</p>
+  <% } %>
+</div>
+<%- include('../partials/bodyclose') %>

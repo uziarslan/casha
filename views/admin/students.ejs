@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+<title>Admin Dashboard</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="qoutesTextWrapper mt-4">
+  <h1 class="allQoutesText">Students</h1>
+</div>
+<div class="teacherDisplayContainer">
+  <% if(students.length) {%>
+  <% students.map((s) => {%>
+  <div class="teacherInnerContainer">
+    <p><%= s.firstName %>,<%= s.lastName %></p>
+    <p><%= s.username %></p>
+    <p><%= s.institute %></p>
+    <p><%= s.grade %></p>
+    <form action="/student/delete/<%= s._id %>?_method=DELETE" method="post">
+      <button type="submit" class="btn btn-danger w-100">Delete</button>
+    </form>
+  </div>
+  <%}) %>
+  <% }else{ %>
+  <p class="noImageText">No student found!</p>
+  <% } %>
+</div>
+
+<%- include('../partials/bodyclose') %>

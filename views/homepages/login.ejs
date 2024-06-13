@@ -1,0 +1,55 @@
+<%- include('../partials/head1') %>
+<title>Casha || Login</title>
+<%- include('../partials/headclose') %>
+<div class="parentDiv">
+  <div class="positionRelative">
+
+    <div class="backgroundAndTextLogin">
+
+
+    </div>
+    <div class="loginIMG"><img src="/images/homepageBackground.jpg" alt=""></div>
+
+    <div class="textL">
+      <h1 class="loginTextHeading">KNOWLEDGE FROM HOME</h1>
+      <p class="loginTextPara">
+        It is a long established fact that a reader will be
+        distracted by the readable content of a page
+        when looking at its layout.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="inputContainerLogin">
+    <div class="inputLoginLogo"></div>
+    <p class="inputTopText">Welcome to CASHA</p>
+    <%- include('../partials/flash') %>
+    <form method="post" action="/login" novalidate class="loginForm">
+
+      <div class="group width-100">
+        <input required type="email" autocomplete="off" placeholder="email" name="username" id="username" class="input">
+
+        <label for="email" class="labelC">Email</label>
+      </div>
+      <div class="group width-100">
+        <input required type="password" autocomplete="new-password" placeholder="password" name="password" id="password" class="input">
+        <label for="password" class="labelC">Password</label>
+      </div>
+
+      <button class="submitButton" type="submit">Login</button>
+    </form>
+    <p class="signUpLine">Don't have an account? <a href="/signuphome"><span> Signup</span> </a></p>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var usernameInput = document.getElementById("username");
+    usernameInput.setAttribute("autocomplete", "off");
+  });
+
+</script>
+
+
+<%- include('../partials/bodyclose') %>

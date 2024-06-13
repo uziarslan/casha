@@ -1,0 +1,190 @@
+<%- include('../partials/head') %>
+<title>Teacher || Profile</title>
+<%- include('../partials/headclose') %>
+<section class="dashboardContainer">
+  <nav>
+    <div class="sideNavbarContainer">
+      <div class="logoimgContainer">
+        <img class="logo" src="/images/logo.png" alt="Casha Logo" />
+      </div>
+      <ul class="sideNavbarLinkContainer">
+        <a href="/teacher/dashboard" class="sideNavbarLinks">
+          <i class='bx bxs-user'></i>
+          <p>My Students</p>
+        </a>
+        <a href="/teacher/requests" class="sideNavbarLinks">
+          <i class='bx bxs-user-plus'></i>
+          <p>Requests</p>
+        </a>
+        <a href="/teacher/profile" class="sideNavbarLinks active">
+          <i class='bx bxs-cog'></i>
+          <p>Profile</p>
+        </a>
+        <a href="/signout" class="sideNavbarLinks">
+          <i class='bx bx-log-out-circle'></i>
+          <p>Sign Out</p>
+        </a>
+      </ul>
+    </div>
+    <div class="bottomTabNavigator">
+      <ul class="bottomTabNavigatorContainer">
+        <li class="bottomNavigatorLinks">
+          <a href="/teacher/dashboard">
+            <i class='bx bxs-user'></i>
+            <p>My Students</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/teacher/requests">
+            <i class='bx bxs-user-plus'></i>
+            <p>Requests</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks active2">
+          <a href="/teacher/profile">
+            <i class='bx bxs-cog'></i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/signout">
+            <i class='bx bx-log-out-circle'></i>
+            <p>Sign Out</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="dashboard">
+    <div class="dashboardHead">
+      <h2 class="headingText">Dashboard</h2>
+      <div class="userInfo">
+        <% if(user.profileImage) {%>
+        <img src="<%= user.profileImage %>" class="avatar" />
+        <% }else{ %>
+        <img src="/images/avatar-icon-8.jpg" class="avatar" />
+        <% } %>
+        <p class="email"><%= user.username %></p>
+      </div>
+    </div>
+    <div class="dashboardNavbar">
+      <a href="/teacher/requests" class="backButtonSet">
+        <i class='bx bx-left-arrow-alt'></i>
+        <p class="buttonLeftText">Requests</p>
+      </a>
+      <div class="screenName">
+        <h2 class="screenNameText">Profile</h2>
+      </div>
+      <a href="/teacher/signout" class="forwardButtonSet">
+        <p class="buttonRightText">Sign Out</p>
+        <i class='bx bx-right-arrow-alt'></i>
+      </a>
+    </div>
+    <form method="post" action="/teacher/<%= user._id %>?_method=PUT" novalidate class="signupformAccordion">
+      <h2 class="formHeading">Edit Your Profile</h2>
+      <%- include('../partials/flash') %>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Edit Profile
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="profile" class="accordion-body">
+              <div class="halfnHalf">
+                <input class="form-control" value="<%= user.firstName %>" type="text" required name="firstName" placeholder="First Name*" />
+                <input class="form-control" value="<%= user.lastName %>" type="text" required name="lastName" placeholder="Last Name*" />
+              </div>
+              <div class="halfnHalf">
+                <input class="form-control" value="<%= user.username %>" type="email" required name="username" placeholder="Email address*" />
+                <input class="form-control" type="password" name="password" placeholder="Change Password" />
+              </div>
+              <div class="halfnHalf">
+                <input class="form-control" value="<%= user.degree %>" type="text" required name="degree" placeholder="Highest level of education*" />
+                <input class="form-control" value="<%= user.institute %>" type="text" required name="institute" placeholder="Institution/University*" />
+              </div>
+              <div class="halfnHalf">
+                <input class="form-control" value="<%= user.contact %>" type="tel" name="contact" placeholder="Phone Number" />
+                <input class="form-control" value="<%= user.profession %>" type="text" required name="profession" placeholder="Profession*" />
+              </div>
+              <div class="fullWidth">
+                <input class="form-control" value="<%= user.preferredSubject %>" type="text" name="preferredSubject" required placeholder="Preferred Subject*" />
+              </div>
+              <div class="fullWidth">
+                <input class="form-control" value="<%= user.address %>" type="text" name="address" required placeholder="Address*" />
+              </div>
+              <div class="halfnHalf">
+                <input class="form-control" value="<%= user.postalCode %>" type="text" name="postalCode" required placeholder="Postal code*" />
+                <select name="province" required class="province form-control">
+                  <option disabled>Select Province</option>
+                  <option value="Alberta" <%= user.province === 'Alberta' ? 'selected' : '' %>>Alberta</option>
+                  <option value="British Columbia" <%= user.province === 'British Columbia' ? 'selected' : '' %>>British Columbia</option>
+                  <option value="Manitoba" <%= user.province === 'Manitoba' ? 'selected' : '' %>>Manitoba</option>
+                  <option value="New Brunswick" <%= user.province === 'New Brunswick' ? 'selected' : '' %>>New Brunswick</option>
+                  <option value="Newfoundland and Labrador" <%= user.province === 'Newfoundland and Labrador' ? 'selected' : '' %>>Newfoundland and Labrador</option>
+                  <option value="Northwest Territories" <%= user.province === 'Northwest Territories' ? 'selected' : '' %>>Northwest Territories</option>
+                  <option value="Nova Scotia" <%= user.province === 'Nova Scotia' ? 'selected' : '' %>>Nova Scotia</option>
+                  <option value="Nunavut" <%= user.province === 'Nunavut' ? 'selected' : '' %>>Nunavut</option>
+                  <option value="Ontario" <%= user.province === 'Ontario' ? 'selected' : '' %>>Ontario</option>
+                  <option value="Prince Edward Island" <%= user.province === 'Prince Edward Island' ? 'selected' : '' %>>Prince Edward Island</option>
+                  <option value="Quebec" <%= user.province === 'Quebec' ? 'selected' : '' %>>Quebec</option>
+                  <option value="Saskatchewan" <%= user.province === 'Saskatchewan' ? 'selected' : '' %>>Saskatchewan</option>
+                  <option value="Yukon" <%= user.province === 'Yukon' ? 'selected' : '' %>>Yukon</option>
+                </select>
+              </div>
+              <div class="fullWidth">
+                <p class="policeReport">Police Report*</p>
+                <input value="<%= user.policeReport %>" class="policeReportInput form-control" type="text" name="policeReport" required placeholder="Paste the link to your document" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Edit Timings
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="daysNTimeSection">
+                <% user.availability.map(({day, to, from}) => { %>
+                <div class="dayNTime">
+                  <p class="day"><%= day %></p>
+                  <div class="toFromContainer">
+                    <label for="<%= day.toLowerCase() %>_to">To:</label>
+                    <input class="form-control" id="<%= day.toLowerCase() %>_to" value="<%= to || '' %>" type="time" name="<%= day.toLowerCase() %>[to]" />
+                    <label for="<%= day.toLowerCase() %>_from">From:</label>
+                    <input class="form-control" id="<%= day.toLowerCase() %>_from" value="<%= from || '' %>" type="time" name="<%= day.toLowerCase() %>[from]" />
+                    <button class="clearButton" type="button" onclick="clearTimeInputs('<%= day.toLowerCase() %>_to', '<%= day.toLowerCase() %>_from')">Clear</button>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Choose Avatar
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div id="avatarContainer" class="accordion-body">
+              <% avatars.map(({path}) => { %>
+              <div onclick="selectAvatar()" class="avatarBody">
+                <img class="avatar <%= path === user.profileImage? "selected": '' %>" src="<%= path %>" />
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="selectedImage" name="profileImage" value="" />
+      <button type="submit" class="signupButton">Save</button>
+    </form>
+  </div>
+</section>
+<%- include('../partials/bodyclose') %>

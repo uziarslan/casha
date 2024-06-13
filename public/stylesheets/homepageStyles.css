@@ -1,0 +1,1776 @@
+body {
+  overflow-x: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .swiper-client-msg::before {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5rem solid white;
+  border-color: transparent;
+  border-top-color: #effbff;
+} */
+
+.inspirationQuoteText {
+  text-align: center;
+  font-family: 'Arbutus Slab', serif;
+}
+
+.quoteText {
+  text-align: center;
+  font-family: 'Arbutus Slab', serif;
+}
+
+.saying {
+  font-family: 'Caveat', cursive;
+}
+
+.iconTop {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  font-size: 5rem;
+  color: #bee9e8;
+  font-weight: 900;
+}
+
+.iconBottom {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  font-size: 5rem;
+  color: #bee9e8;
+  font-weight: 900;
+}
+
+.swiper-client-msg {
+  padding: 5rem 4rem;
+  background: white;
+  border-radius: 1rem;
+  text-align: left;
+  position: relative;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-client-data {
+  margin: 1rem 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#meet {
+  height: 100vh;
+  width: 100vw;
+}
+
+.usericon {
+  text-decoration: none;
+  color: black;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.links {
+  margin: 0;
+}
+
+.links li {
+  list-style: none;
+  font-family: 'Asap Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18;
+}
+
+.links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.links li a:hover {
+  color: #FFA2C0;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+  z-index: 100000;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+  width: 100%;
+  height: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoimg {
+  width: 171.55px;
+  height: 90px;
+}
+
+.logo {
+  width: 171.55px;
+  height: 90px;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.dropdown_menu.open {
+  height: auto;
+  font-family: 'Asap Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.dropdown_menu {
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background-color: white;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  height: 0;
+  transition: height 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.topper {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 50px;
+  background-color: #bee9e8;
+  align-items: center;
+}
+
+.signupButtonsContainer a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.signupButtonsContainer a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff3549;
+  transition: width 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.signupButtonsContainer a:hover::after {
+  width: 100%;
+}
+
+.teachers {
+  text-decoration: none;
+  color: black;
+  font-family: 'Asap Condensed', sans-serif;
+  font-weight: 500;
+  margin-right: 30px;
+  font-size: 18;
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+
+.students {
+  text-decoration: none;
+  color: black;
+  font-family: 'Asap Condensed', sans-serif;
+  font-weight: 500;
+  margin-right: 130px;
+  font-size: 18;
+}
+
+
+.homepageImage {
+  position: relative;
+  width: 100vw;
+  height: 596px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/homepageBackground.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.homepageImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+.centeredText {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+
+.centeredSubtext {
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+
+.homepageImage h1,
+.homepageImage h4 {
+  position: relative;
+  z-index: 1;
+}
+
+
+.productSpotlight {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: auto;
+  padding: 50px 0;
+}
+
+.textArea {
+  width: 50%;
+}
+
+.spotlightHeading {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.productSpotlightDetails {
+  text-align: center;
+  width: 431px;
+  margin: 20px auto 40px auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.gettingStartedbutton {
+  width: 255px;
+  height: 60px;
+  background-color: #FF4B5C;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.gettingStartedbutton:hover {
+  background-color: #ff3549;
+  transform: scale(1.05);
+}
+
+.imageDisplay {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.productSpotlightImage {
+  width: 600px;
+  height: auto;
+}
+
+
+.redContainer {
+  width: 100vw;
+  background-color: #1597BB;
+  display: flex;
+  flex-direction: column;
+  padding: 55px 0 60px 0;
+  height: auto;
+  box-shadow: 0px 4px 30px 15px rgba(0, 0, 0, 0.25);
+}
+
+.containerHeading {
+  text-align: center;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: white;
+  margin: 0;
+}
+
+.subtitleText {
+  text-align: center;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 30px 0;
+  color: white;
+}
+
+.joinClassButton {
+  width: 165px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8BDB81;
+  border-radius: 15px;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.joinClassButton:hover {
+  transform: scale(1.05);
+}
+
+
+.provenResultsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding: 0 20px;
+  margin: 50px 0;
+  height: auto;
+}
+
+.provenResultsHeading {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  margin: 0;
+}
+
+.containerHeadingSubtitle {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  margin: 30px 0 40px 0;
+}
+
+.universityShowcase {
+  width: 100%;
+  height: auto;
+  padding: 55px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.imageContainer {
+  width: 340px;
+  height: auto;
+  margin: 0 auto;
+  flex-basis: calc(33.33%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.universityImage {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.awardsSectionContainer {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100vw;
+  margin-bottom: 130px;
+}
+
+
+.awardSectionHeading {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  margin-bottom: 30px;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  width: 250px;
+  height: 300px;
+  padding: 25px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  margin-right: 40px;
+  margin-bottom: 15px;
+}
+
+.cardHead {
+  width: 200px;
+  height: 200px;
+}
+
+.cardImageHome {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+
+.cardTextContent {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F2F2F2;
+}
+
+
+.footerTopElements {
+  display: flex;
+  flex-direction: row;
+  margin: 0 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialMediaIcons {
+  width: auto;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMediaIcons i {
+  font-size: 50px;
+  margin-right: 30px;
+}
+
+.copyRightsContainer {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.copyRightText {
+  text-align: center;
+  margin: auto 0;
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+
+.bodySection {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.leftSide {
+  width: 66%;
+  background-color: #F7F5F2;
+  height: 100%;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 130px 0 0 0;
+  background-color: #F7F5F2;
+}
+
+.signupformAccordion {
+  padding: 0 50px;
+  margin-top: 130px;
+  background-color: #F7F5F2;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formHeading {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  margin-bottom: 40px;
+}
+
+.halfnHalf {
+  width: 670px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.halfnHalf input {
+  width: 295px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.fullWidth {
+  width: 670px;
+}
+
+.fullWidth input {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.province {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.policeReport {
+  margin: 0 0 5px 0;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.policeReportInput {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 0;
+}
+
+.daysNTimeSection {
+  margin-top: 20px;
+}
+
+.dayNTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: auto;
+}
+
+.day {
+  margin-bottom: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.toFromContainer {
+  width: 312px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toFromContainer label {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.signupButton {
+  width: 300px;
+  height: 60px;
+  border-radius: 20px;
+  border: none;
+  background-color: #8BDB81;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: white;
+  margin: 65px auto;
+  display: block;
+}
+
+
+.right {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/signinbackground.png);
+  background-position: center center;
+  background-size: cover;
+}
+
+.alreadyRegistered {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 54px;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.signinText {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: white;
+  width: 309px;
+  margin: 20px 0 30px 0;
+}
+
+.signInButtonWrapper {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.signInButton {
+  color: black;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0;
+}
+
+
+.loginBody {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F7F5F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginForm {
+  width: 500px;
+  height: auto;
+  padding: 25px 50px 110px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.loginForm label {
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.loginForm input {
+  height: 40px;
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.loginButton {
+  margin-top: 30px;
+  background: #8BDB81;
+  border-radius: 20px;
+  width: 100%;
+  height: 60px;
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  color: white;
+  border: none;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginButton:hover {
+  transform: scale(1.02);
+}
+
+.signupLink {
+  text-align: center;
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #9C9C9C;
+  margin: 0;
+}
+
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sideNavbarContainer {
+  width: auto;
+}
+
+.sideNavbarLinkContainer {
+  padding: 0;
+}
+
+.sideNavbarLinks {
+  list-style: none;
+  width: 191px;
+  height: 40px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  transition: all 0.5s ease;
+}
+
+.sideNavbarLinks:hover {
+  background-color: #FF4B5C;
+}
+
+.sideNavbarLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.sideNavbarLinks i {
+  font-size: 25px;
+}
+
+.sideNavbarLinks p {
+  margin: 0;
+  font-family: 'Asap Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  margin-left: 15px;
+}
+
+.bottomTabNavigator {
+  display: none;
+}
+
+.active {
+  background-color: #FF4B5C;
+}
+
+
+.dashboard {
+  width: 100%;
+  background-color: #F7F5F2;
+  height: 100%;
+}
+
+.dashboardHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 100px;
+}
+
+.headingText {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  margin: 0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.email {
+  margin: 0;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.dashboardNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 80px;
+  align-items: center;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.backButtonSet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.backButtonSet i {
+  font-size: 24px;
+}
+
+.buttonLeftText {
+  margin: 0;
+  margin-left: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+
+.screenNameText {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  margin: 0;
+}
+
+.forwardButtonSet {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.forwardButtonSet i {
+  font-size: 24px;
+}
+
+.buttonRightText {
+  margin: 0;
+  margin-right: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+
+
+.searchSection {
+  padding: 0 50px;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.searchInput {
+  border: 1px dotted black;
+  width: 275px;
+  height: 40px;
+  padding-left: 15px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  color: #9C9C9C;
+}
+
+.itemsPerPageGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.itemsPerPage {
+  margin-right: 15px;
+  width: 70px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.itemsPerPageText {
+  margin: 0;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.cardsContainerSection {
+  padding: 0 50px;
+  background-color: #F7F5F2;
+  padding-bottom: 25px;
+}
+
+.cardSectionHeading {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.cardBody {
+  width: 170px;
+  height: auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in;
+}
+
+.cardBody:hover .removeStudent {
+  height: 20px;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF0000;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.cardImageHead {
+  width: 170px;
+  height: 100px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.cardImage {
+  width: 170px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px 0 10px;
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+.schoolName {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+
+.degree {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.preferredSubject {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.grade {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 5px 0;
+}
+
+.availability {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.topic {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pendingButton {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+  color: #9C9C9C;
+}
+
+.pendingButtonMyStudents {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: #9C9C9C;
+  text-transform: capitalize;
+  color: #ffc107;
+}
+
+.approvedButton {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: #8BDB81;
+  text-transform: capitalize;
+}
+
+.cardBottomButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 25px 0;
+}
+
+.acceptBtn {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration-line: underline;
+  color: #8BDB81;
+  background-color: transparent;
+  border: none;
+}
+
+.deleteButton {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration-line: underline;
+  color: #FF0000;
+}
+
+.removeStudent {
+  height: 0;
+  overflow: hidden;
+}
+
+.removeStudent a {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+}
+
+#avatarContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.avatarBody {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: fill;
+  object-position: center;
+}
+
+.avatar.selected {
+  border: 3px solid blue;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.clearButton {
+  background-color: #FF0000;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.expirationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.expirationContainer i {
+  font-size: 150px;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.expiredLinkText {
+  font-size: 24px;
+  text-align: center;
+}
+
+@media(max-width: 1200px) {
+  .productSpotlightImage {
+    width: 500px;
+    height: auto;
+  }
+}
+
+@media(max-width: 1100px) {
+  .productSpotlight {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .textArea {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .imageDisplay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bodySection {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .leftSide {
+    width: 100%;
+    background-color: #F7F5F2;
+    height: 100%;
+  }
+
+  .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/signinbackground.png);
+    background-position: center center;
+    background-size: cover;
+    padding: 2rem 0;
+  }
+}
+
+@media(max-width: 992px) {
+  .navbar .links {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+
+  .topper {
+    display: none;
+  }
+
+  .footerTopElements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .socialMediaIcons {
+    width: 300px;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .socialMediaIcons i {
+    font-size: 50px;
+    margin-right: 0;
+  }
+}
+
+
+
+@media(max-width: 576px) {
+
+  .signupformAccordion {
+    padding: 0 50px;
+    margin-top: 130px;
+    background-color: #F7F5F2;
+    padding-bottom: 50px;
+  }
+
+  .signupButton {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8BDB81;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: white;
+    margin: 65px auto;
+    display: block;
+  }
+
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
+
+  .productSpotlightDetails {
+    text-align: center;
+    width: auto;
+    margin: 20px auto 40px auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 0 2rem;
+  }
+
+  .imageDisplay {
+    padding: 0 2rem;
+  }
+
+  .productSpotlightImage {
+    width: 100vw;
+    height: auto;
+  }
+
+  .cardWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .cardContainer {
+    width: 250px;
+    height: 300px;
+    padding: 25px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .halfnHalf {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 0.8rem;
+  }
+
+  .halfnHalf input {
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 20px;
+  }
+
+  .fullWidth {
+    width: 100%;
+    padding: 0 0.8rem;
+  }
+
+  .loginBody {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F7F5F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+
+  .loginForm {
+    width: 100%;
+    height: 550px;
+    padding: 25px 25px 110px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .sideNavbarContainer {
+    display: none;
+  }
+
+  .bottomTabNavigator {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: white;
+  }
+
+  .bottomTabNavigatorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bottomNavigatorLinks {
+    list-style: none;
+    padding: 10px 15px;
+    width: calc(25%);
+  }
+
+  .bottomNavigatorLinks a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  .bottomNavigatorLinks a p {
+    font-size: 15px;
+    font-family: 'Asap Condensed';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .active2 {
+    background-color: #FF4B5C;
+    border-radius: 15px;
+  }
+
+  .dashboardHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0px;
+    height: auto;
+  }
+
+  .buttonLeftText {
+    display: none;
+  }
+
+  .buttonRightText {
+    display: none;
+  }
+
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .searchInput {
+    border: 1px dotted black;
+    width: 275px;
+    height: 40px;
+    padding-left: 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    color: #9C9C9C;
+  }
+
+  .itemsPerPageGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0;
+  }
+
+  .cardsContainerSection {
+    padding: 40px 50px 100px 50px;
+  }
+
+  .cardSectionHeading {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .cardsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 130px 0 0 0;
+    background-color: #F7F5F2;
+    padding-bottom: 50px;
+  }
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    width: 340px;
+    height: auto;
+    flex-basis: calc(33.33%);
+  }
+
+  .universityImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .toFromContainer {
+    width: calc(100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media(max-width: 300px) {
+  .province {
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 20px;
+    width: 250px;
+  }
+
+  .toFromContainer {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .signupButton {
+    width: 250px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8BDB81;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: white;
+    margin: 65px 0 50px 0;
+  }
+}

@@ -1,0 +1,62 @@
+<%- include('../partials/head') %>
+<title>Admin Dashboard</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="qoutesTextWrapper mt-4">
+  <h1 class="allQoutesText">New Teachers</h1>
+</div>
+<div class="teacherDisplayContainer">
+  <% if(newTeachers.length) {%>
+  <% newTeachers.map((t) => { %>
+  <div class="teacherInnerContainer">
+    <p><%= t.firstName %>,<%= t.lastName %></p>
+    <p><%= t.username %></p>
+    <p><%= t.degree %></p>
+    <p><%= t.institute %></p>
+    <p><%= t.contact %></p>
+    <p><%= t.profession %></p>
+    <p><%= t.preferredSubject %></p>
+    <p><%= t.address %>, <%= t.province %>, <%= t.postalCode %></p>
+    <a class="policeReportLinkView" href="<%= t.policeReport %>" target="_blank">View Police Report</a>
+    <form action="/teacher/verify/<%= t._id %>?_method=PUT" method="post">
+      <button type="submit" class="btn btn-success w-100 mb-2">Approve</button>
+    </form>
+    <form action="/teacher/delete/<%= t._id %>?_method=DELETE" method="post">
+      <button type="submit" class="btn btn-danger w-100">Delete</button>
+    </form>
+  </div>
+  <% }) %>
+  <% }else {%>
+  <p class="noImageText">No new teacher signed up!</p>
+  <% } %>
+</div>
+<div class="qoutesTextWrapper">
+  <h2 class="allQoutesText">Approved Teachers</h2>
+</div>
+<div class="teacherDisplayContainer">
+  <% if(oldTeachers.length) {%>
+  <% oldTeachers.map((t) => { %>
+  <div class="teacherInnerContainer">
+    <p><%= t.firstName %> <%= t.lastName %></p>
+    <p><%= t.username %></p>
+    <p><%= t.degree %></p>
+    <p><%= t.institute %></p>
+    <p><%= t.contact %></p>
+    <p><%= t.profession %></p>
+    <p><%= t.preferredSubject %></p>
+    <p><%= t.address %>, <%= t.province %>, <%= t.postalCode %></p>
+    <a class="policeReportLinkView" href="<%= t.policeReport %>" target="_blank">View Police Report</a>
+    <form action="/teacher/revert/<%= t._id %>?_method=PUT" method="post">
+      <button type="submit" class="btn btn-primary w-100 mb-2">Revert</button>
+    </form>
+    <form action="/teacher/delete/<%= t._id %>?_method=DELETE" method="post">
+      <button type="submit" class="btn btn-danger w-100">Delete</button>
+    </form>
+  </div>
+  <% }) %>
+  <% }else{ %>
+  <p class="noImageText">Nothing found!</p>
+  <% } %>
+</div>
+<%- include('../partials/bodyclose') %>

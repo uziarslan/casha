@@ -1,0 +1,93 @@
+<%- include('../partials/head1') %>
+<title>SignUp</title>
+<style>
+  .nonedisplay {
+    display: none;
+  }
+
+</style>
+<%- include('../partials/headclose') %>
+<div class="parentDivSignUp">
+  <div class="positionRelative">
+
+    <div class="backgroundAndTextLogin">
+
+
+    </div>
+    <div class="loginIMG"><img src="/images/homepageBackground.jpg" alt=""></div>
+    <div class="textL">
+      <h1 class="loginTextHeading">KNOWLEDGE FROM HOME</h1>
+      <p class="loginTextPara">
+        It is a long established fact that a reader will be
+        distracted by the readable content of a page
+        when looking at its layout.
+      </p>
+    </div>
+
+  </div>
+  <div class="inputContainerLogin">
+    <a href="/" class="inputLoginLogo"></a>
+    <div class="enclosedInput">
+
+
+      <p class="inputTopTextSinUp">Please select your role</p>
+      <div class="roleDiv"> <a href="/signup/student" class="student123">
+          <div id="role1" class="selectRole flex123">
+            <img src="/images/Graduate.svg" alt="">
+            <p>Student</p>
+          </div>
+        </a>
+        <a href="/signup/teacher" class="student123">
+          <div id="role2" class="selectRole flex123">
+            <img src="/images/Teacher.jpg" alt="">
+            <p>Teacher</p>
+          </div>
+        </a>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the role elements
+    var role1 = document.getElementById('role1');
+    var role2 = document.getElementById('role2');
+
+    // Get the forms
+    var signupForm = document.getElementById('studentInputs');
+    var loginForm = document.getElementById('teachersInputs');
+    var line = document.getElementById('signUp');
+
+    var elementT = document.querySelector('.positionRelative');
+    var elementlol = document.querySelector('.inputContainerLogin');
+
+
+    // Add click event listeners
+    role1.addEventListener('click', function() {
+      // Show the signup form
+      signupForm.style.display = 'flex';
+      role1.style.border = '1px solid #FF2970';
+      // Hide the login form
+      loginForm.style.display = 'none';
+      role2.style.border = '1px solid #CCC';
+
+    });
+
+    role2.addEventListener('click', function() {
+      // Show the login form
+      loginForm.style.display = 'flex';
+      role2.style.border = '1px solid #FF2970';
+      // Hide the signup form
+      signupForm.style.display = 'none';
+      role1.style.border = '1px solid #CCC';
+    });
+  });
+
+</script>
+</body>
+
+</html>

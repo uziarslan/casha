@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="width: 100vw; height: 100vh;" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= request.requestTopic  %></title>
+  <script src='https://meet.jit.si/external_api.js'></script>
+</head>
+
+<body style="width: 100vw; height: 100vh;">
+  <div style="width: 100vw; height: 100vh;" id="meet"></div>
+  <script>
+    const domain = 'meet.jit.si';
+    const options = {
+      roomName: '<%= request.requestTopic %>'
+      , width: "100%"
+      , height: "100%"
+      , parentNode: document.querySelector('#meet')
+      , configOverwrite: {
+        prejoinPageEnabled: false
+      }
+      , userInfo: {
+        displayName: '<%= request.teacher.firstName ? request.teacher.firstName : request.requestStudent.firstName %>'
+        , email: '<%= request.teacher.username %>'
+        , role: '<%= (request.teacher.username === currentUserEmail) ? "moderator" : "participant" %>'
+      }
+
+
+
+    }
+    const api = new JitsiMeetExternalAPI(domain, options);
+
+  </script>
+</body>
+
+</html>

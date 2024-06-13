@@ -1,0 +1,135 @@
+<!-- Homepage Navbar -->
+<script>
+  const toggleBtn = document.querySelector('.toggle_btn')
+  const toggleBtnIcon = document.querySelector('.toggle_btn i')
+  const dropdownMenu = document.querySelector('.dropdown_menu')
+  toggleBtn.onclick = function() {
+    dropdownMenu.classList.toggle('open')
+  }
+
+</script>
+<script>
+  // Function to handle avatar selection
+  function selectAvatar(event) {
+    // Remove selected class from all avatar images
+    var avatars = document.querySelectorAll(".avatar");
+    avatars.forEach(function(avatar) {
+      avatar.classList.remove("selected");
+    });
+    // Add selected class to the clicked avatar image
+    var selectedAvatar = event.currentTarget.querySelector(".avatar");
+    selectedAvatar.classList.add("selected");
+    // Get the image source of the selected avatar
+    var imageSrc = selectedAvatar.src;
+    // Set the selected image source in the hidden input field
+    var hiddenInput = document.querySelector("#selectedImage");
+    hiddenInput.value = imageSrc;
+  }
+  // Attach the selectAvatar function to each avatar element
+  var avatarBodies = document.querySelectorAll(".avatarBody");
+  avatarBodies.forEach(function(avatarBody) {
+    avatarBody.onclick = selectAvatar;
+  });
+
+</script>
+<script>
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.signupformAccordion')
+    // Loop over them and prevent submission
+    Array.from(forms)
+      .forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+</script>
+
+<script>
+  function clearTimeInputs(toInputId, fromInputId) {
+    document.getElementById(toInputId)
+      .value = '';
+    document.getElementById(fromInputId)
+      .value = '';
+  }
+
+</script>
+
+<script>
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.signupForm')
+
+    // Loop over them and prevent submission
+    Array.from(forms)
+      .forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+</script>
+
+<script>
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.loginForm')
+
+    // Loop over them and prevent submission
+    Array.from(forms)
+      .forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1
+    , spaceBetween: 0
+    , autoplay: {
+      delay: 5000
+      , disableOnInteraction: false
+    }
+    , pagination: {
+      el: ".swiper-pagination"
+      , clickable: true
+    , }
+  , });
+
+</script>
+<!-- CDN's -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

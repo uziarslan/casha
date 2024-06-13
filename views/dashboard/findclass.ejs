@@ -1,0 +1,155 @@
+<%- include('../partials/head') %>
+<title>Student || Find Class</title>
+<%- include('../partials/headclose') %>
+<section class="dashboardContainer">
+  <nav>
+    <div class="sideNavbarContainer">
+      <div class="logoimgContainer">
+        <img class="logo" src="/images/logo.png" alt="Casha Logo" />
+      </div>
+      <ul class="sideNavbarLinkContainer">
+        <a href="/student/dashboard" class="sideNavbarLinks">
+          <i class='bx bxs-user'></i>
+          <p>My Teachers</p>
+        </a>
+        <a href="/student/findclass" class="sideNavbarLinks active">
+          <i class='bx bxs-user-plus'></i>
+          <p>Find Class</p>
+        </a>
+        <a href="/student/profile" class="sideNavbarLinks">
+          <i class='bx bxs-cog'></i>
+          <p>Profile</p>
+        </a>
+        <a href="/signout" class="sideNavbarLinks">
+          <i class='bx bx-log-out-circle'></i>
+          <p>Sign Out</p>
+        </a>
+      </ul>
+    </div>
+    <div class="bottomTabNavigator">
+      <ul class="bottomTabNavigatorContainer">
+        <li class="bottomNavigatorLinks">
+          <a href="/student/dashboard">
+            <i class='bx bxs-user'></i>
+            <p>My Teachers</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks active2">
+          <a href="/student/findclass">
+            <i class='bx bxs-user-plus'></i>
+            <p>Find Class</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/student/profile">
+            <i class='bx bxs-cog'></i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li class="bottomNavigatorLinks">
+          <a href="/signout">
+            <i class='bx bx-log-out-circle'></i>
+            <p>Sign Out</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="dashboard">
+    <div class="dashboardHead">
+      <h2 class="headingText">Dashboard</h2>
+      <div class="userInfo">
+        <% if(user.profileImage) {%>
+        <img src="<%= user.profileImage %>" class="avatar" />
+        <% }else{ %>
+        <img src="/images/avatar-icon-8.jpg" class="avatar" />
+        <% } %>
+        <p class="email"><%= user.username %></p>
+      </div>
+    </div>
+    <div class="dashboardNavbar">
+      <a href="/student/dashboard" class="backButtonSet">
+        <i class='bx bx-left-arrow-alt'></i>
+        <p class="buttonLeftText">My Teachers</p>
+      </a>
+      <div class="screenName">
+        <h2 class="screenNameText">Search Class</h2>
+      </div>
+      <a href="/student/profile" class="forwardButtonSet">
+        <p class="buttonRightText">Profile</p>
+        <i class='bx bx-right-arrow-alt'></i>
+      </a>
+    </div>
+    <div class="searchSection">
+      <form class="searchContainer">
+        <div class="searchInputGroup">
+          <input value="<%= topic %>" placeholder="Search a topic" name="topic" type="search" class="searchInput" />
+        </div>
+        <div class="itemsPerPageGroup">
+          <select name="results" class="itemsPerPage">
+            <option selected value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+          </select>
+          <p class="itemsPerPageText">Items per page</p>
+        </div>
+      </form>
+    </div>
+    <%- include('../partials/flash') %>
+    <div class="cardsContainerSection">
+      <% if(topic) {%>
+      <h4 class="cardSectionHeading">Search Results for "<%= topic %>"</h4>
+      <% }else{ %>
+      <h4 class="cardSectionHeading">All Teachers</h4>
+      <% } %>
+      <div class="cardsWrapper">
+        <% if(teachers.length) {%>
+        <% teachers.map((teacher) => { %>
+        <div class="cardBody">
+          <div class="cardImageHead">
+            <img src="<%= teacher.profileImage %>" class="cardImage" />
+          </div>
+          <div class="cardBottom">
+            <p class="name"><%= teacher.firstName %> <%= teacher.lastName %></p>
+            <p class="schoolName"><%= teacher.institute %></p>
+            <p class="degree"><%= teacher.degree %></p>
+            <p class="preferredSubject">Preferred for: <%= teacher.preferredSubject %></p>
+            <% teacher.availability.map(({day, to, from}) => { %>
+            <% if(day === dayName) {%>
+            <p class="availability"><%= day %>: <%= to %> - <%- from %></p>
+            <% } %>
+            <% }) %>
+          </div>
+          <% if (!teacher.requests.length) { %>
+          <div class="cardBottomButtons">
+            <% if(dayName.toLowerCase() !== 'sunday') {%>
+            <button type="button" class="acceptBtn" data-bs-toggle="modal" data-bs-target="#<%= teacher._id %>">
+              Request to join
+            </button>
+            <% }else{ %>
+            <p class="pendingButton">No Class on Sundays</p>
+            <% } %>
+          </div>
+          <% if(dayName.toLowerCase() !== 'sunday') {%>
+          <form method="post" action="/student/<%= user._id %>/teacher/<%= teacher._id %>">
+            <%- include('../partials/modal', {teacher, requests}) %>
+          </form>
+          <% } %>
+          <% } else if(teacher.requests[0].requestStatus === 'pending') { %>
+          <div class="cardBottomButtons">
+            <p class="pendingButton"><%= teacher.requests[0].requestStatus %>...</p>
+          </div>
+          <% }else{ %>
+          <div class="cardBottomButtons">
+            <p class="approvedButton"><%= teacher.requests[0].requestStatus %></p>
+          </div>
+          <% } %>
+        </div>
+        <% }) %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('../partials/bodyclose') %>

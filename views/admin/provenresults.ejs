@@ -1,0 +1,72 @@
+<%- include('../partials/head') %>
+<title>Proven Results</title>
+<%- include('../partials/headclose') %>
+<%- include('../partials/adminnav') %>
+<%- include('../partials/flash') %>
+<div class="formWrapper">
+  <form action="/proven/results" method="post" class="provenResultsContainerAdmin" enctype="multipart/form-data">
+    <label class="inputLabel" for="uploadImageInput">+</label>
+    <input name="images" accept=".jpg, .jpeg, .png" id="uploadImageInput" type="file" multiple class="uploadImageInput" />
+    <div id="imagePreviewContainer"></div>
+    <button type="submit" id="uploadButton" class="btn btn-success w-100 mt-3">Save</button>
+  </form>
+</div>
+<hr>
+<div class="previouslyUploadedContainer">
+  <h1 class="previouslyUploadedText">Uploaded images</h1>
+</div>
+<div class="imageContainerWrapper">
+  <% if(images.length) { %>
+  <% images.map(({filename, path, _id}) => { %>
+  <form class="deleteImageForm" action="/image/delete/<%= _id %>?_method=DELETE" method="post">
+    <img class="previousImage" src="<%= path %>" alt="<%= filename %>" />
+    <button type="submit" class="deleteBtn">Delete</button>
+  </form>
+  <% }) %>
+  <% } else { %>
+  <p class="noImageText">No Image Found!</p>
+  <% } %>
+</div>
+<script>
+  let selectedImages = [];
+
+  document.getElementById("uploadImageInput")
+    .addEventListener("change", function(event) {
+      const previewContainer = document.getElementById("imagePreviewContainer");
+
+      selectedImages = []; // Clear the selected images array
+
+      while (previewContainer.firstChild) {
+        previewContainer.removeChild(previewContainer.firstChild);
+      }
+
+      const files = event.target.files;
+
+      for (let i = 0; i
+
+        <
+        files.length; i++) {
+        const file = files[i];
+        const previewWrapper = document.createElement("div");
+        previewWrapper.classList.add("imagePreviewWrapper");
+        previewContainer.appendChild(previewWrapper);
+        const imageElement = document.createElement("img");
+        imageElement.classList.add("previewImage");
+        imageElement.file = file;
+        previewWrapper.appendChild(imageElement);
+        selectedImages.push({
+          file
+          , previewWrapper
+        });
+        const reader = new FileReader();
+        reader.onload = (function(img) {
+          return function(e) {
+            img.src = e.target.result;
+          };
+        })(imageElement);
+        reader.readAsDataURL(file);
+      }
+    });
+
+</script>
+<%- include('../partials/bodyclose') %>

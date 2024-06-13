@@ -1,0 +1,212 @@
+.navbarContainer {
+    background-color: grey;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navItemContainerAdmin {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navLinksAdmin {
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.navItemsAdmin {
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.provenResultsContainerAdmin {
+    width: 400px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.inputLabel {
+    background-color: transparent;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 3px dotted black;
+    color: rgb(136, 136, 136);
+    /* text-align: center; */
+    height: 150px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.uploadImageInput {
+    display: none;
+}
+
+#imagePreviewContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.previewImage {
+    max-width: 80px;
+    height: auto;
+    margin: 5px;
+}
+
+.uploadBtn {
+    background-color: transparent;
+    border: none;
+    margin-top: 20px;
+    background-color: greenyellow;
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+.previouslyUploadedContainer {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.previouslyUploadedText {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.previousImage {
+    width: 150px;
+    height: auto;
+}
+
+.noImageText {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.deleteImageForm {
+    border: 2px dotted grey;
+}
+
+.imageContainerWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* margin-top: 25px; */
+    align-items: flex-start;
+    padding: 25px;
+    gap: 25px;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border: none;
+    background-color: red;
+    color: white;
+}
+
+.quotesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.quoteForm {
+    width: 400px;
+    height: auto;
+    padding: 15px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.qoutesTextWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.allQoutesText {
+    border-bottom: 2px solid black;
+}
+
+.textAreaStyles {
+    height: 160px;
+}
+
+
+.allQuotesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    align-items: flex-start;
+}
+
+.quoteBody {
+    width: 350px;
+    border: 2px dotted grey;
+    padding: 10px;
+}
+
+.quoteText {
+    text-align: center;
+}
+
+.quoteBy {
+    text-align: center;
+    font-weight: bold;
+}
+
+.quoteButtonWrappers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.teacherDisplayContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 15px;
+    align-items: flex-start;
+}
+
+.teacherInnerContainer {
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.teacherInnerContainer p {
+    margin: 0;
+    text-align: center;
+}
+
+.policeReportLinkView {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
